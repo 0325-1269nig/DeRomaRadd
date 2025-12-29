@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Student Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:linear-gradient(180deg,#1a1a2e,#16213e,#0f3460);
+  color:#f5f5f5;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(10px);
+  border-radius:50px;
+  padding:12px 25px;
+  z-index:999;
+}
+
+nav a{
+  margin:0 12px;
+  color:#f5f5f5;
+  text-decoration:none;
+  font-size:.85rem;
+}
+
+nav a:hover{
+  color:#e94560;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero-img{
+  width:210px;
+  height:210px;
+  border-radius:50%;
+  overflow:hidden;
+  border:5px solid #e94560;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.hero-img:hover{
+  transform:scale(1.12);
+  box-shadow:0 0 50px #e94560;
+}
+
+.hero-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero h1{
+  margin-top:25px;
+  font-size:3rem;
+}
+
+.hero p{
+  opacity:.85;
+}
+
+/* ===== SECTIONS ===== */
+.section{
+  max-width:1100px;
+  margin:100px auto;
+  padding:60px 40px;
+}
+
+.section h2{
+  font-size:2.3rem;
+  margin-bottom:40px;
+  text-align:center;
+  color:#e94560;
+}
+
+/* ===== STORY ===== */
+.story{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+
+.story p{
+  line-height:2;
+  font-size:1.05rem;
+}
+
+.story img{
+  width:100%;
+  border-radius:20px;
+  transition:.4s;
+}
+
+.story img:hover{
+  transform:scale(1.08);
+}
+
+/* ===== SKILLS ===== */
+.skill{
+  display:flex;
+  gap:40px;
+  margin:60px 0;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.skill img{
+  width:300px;
+  border-radius:20px;
+}
+
+.skill h3{
+  color:#e94560;
+  margin-bottom:10px;
+}
+
+/* ===== CONTACT ===== */
+.contact-box{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.contact-btn{
+  padding:14px 35px;
+  border-radius:30px;
+  background:#e94560;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.contact-btn:hover{
+  transform:scale(1.1);
+}
+
+/* ===== POPUP ===== */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+.popup-box{
+  background:#1a1a2e;
+  padding:40px;
+  border-radius:25px;
+  text-align:center;
+  animation:zoom .3s ease;
+}
+
+@keyframes zoom{
+  from{transform:scale(.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+.popup-box a{
+  color:#e94560;
+  text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  opacity:.7;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .story{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#story">Story</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-img">
+    <img src="Tirador ng bakla.jpg" alt="Profile">
+  </div>
+  <h1>Radd Jaypee De Roma</h1>
+  <p>First year IT Student</p>
+</section>
+
+<!-- STORY -->
+<section id="story" class="section">
+  <h2>About Me</h2>
+  <div class="story">
+    <p>
+      Hi my name is Radd and This is the story of someone who started with curiosity.
+      Learning wasn’t always easy, but every mistake became a lesson.
+      Over time, interest turned into passion, and passion into purpose.
+      This portfolio represents growth, effort, and the willingness to keep improving.
+    </p>
+    <img src="bading.jpg" alt="Story Image">
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <h2>Hobbies and Skills</h2>
+
+  <div class="skill">
+    <img src="Coldplay.jpeg">
+    <div>
+      <h3>Music</h3>
+      <p>
+        Music helps me focus, express emotions, and stay motivated during long days of work.
+      </p>
+    </div>
+  </div>
+
+  <div class="skill">
+    <img src="basketnigga.jpg">
+    <div>
+      <h3>Playing Basketball</h3>
+      <p>
+        I love playing basketball because it lets me release stress, push my limits, and feel alive every time I step on the court.
+      </p>
+    </div>
+  </div>
+
+  <div class="skill">
+    <img src="Blog+main+pic+(1).png">
+    <div>
+      <h3>Communication</h3>
+      <p>
+        I value communication skills because they help me express my thoughts clearly, build confidence, and connect better with other people.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <div class="contact-box">
+    <div class="contact-btn" onclick="openPop('email')">Email</div>
+    <div class="contact-btn" onclick="openPop('social')">Social</div>
+  </div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box" id="popupBox"></div>
+</div>
+
+<footer>
+  © All Rights Reserved@2025
+</footer>
+
+<script>
+function openPop(type){
+  const popup = document.getElementById('popup');
+  const box = document.getElementById('popupBox');
+
+  if(type === 'email'){
+    box.innerHTML = `
+      <h3>Email</h3>
+      <p>deromaradd@gmail.com</p>
+    `;
+  } else {
+    box.innerHTML = `
+      <h3>Facebook</h3>
+      <p><a href="https://www.facebook.com/radd.deroma.7" target="_blank">Visit Profile in Facebook</a></p>
+    `;
+  }
+
+  popup.style.display = 'flex';
+}
+
+document.getElementById('popup').onclick = () => {
+  document.getElementById('popup').style.display = 'none';
+};
+</script>
+
+</body>
+</html>
